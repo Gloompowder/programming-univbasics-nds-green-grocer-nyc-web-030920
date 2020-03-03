@@ -77,6 +77,10 @@ end
 def apply_clearance(cart)
   # Consult README for inputs and outputs
   #
+  index = 0 
+  while index < cart.length do 
+    index += 1 
+  end
   # REMEMBER: This method **should** update cart
 end
 
