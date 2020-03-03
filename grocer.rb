@@ -97,19 +97,12 @@ def checkout(cart, coupons)
   
   total = 0
   index = 0 
-  while index < final_cart.length do
-    total += final_cart[index][:prince] * final_cart[index][:count]
+  while index < final_cart.length 
+    total += final_cart[index][:price] * final_cart[index][:count]
     index += 1
   end
   if total > 100 
     total * 90 
   end
   total
-  # This method should call
-  # * consolidate_cart
-  # * apply_coupons
-  # * apply_clearance
-  #
-  # BEFORE it begins the work of calculating the total (or else you might have
-  # some irritated customers
 end
