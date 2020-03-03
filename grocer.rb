@@ -96,10 +96,14 @@ def checkout(cart, coupons)
   final_cart = apply_clearance(couponed_cart)
   total = 0
   index = 0 
-  while index < cart.length do
-    new_array = []
-    
-  index +=1
+  while index < final_cart.length do
+    total += final_cart[index][:prince] * final_cart[index][:count]
+    index += 1
+  end
+  if total > 100 
+    total * 90 
+  end
+  total
   # This method should call
   # * consolidate_cart
   # * apply_coupons
