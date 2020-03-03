@@ -64,6 +64,12 @@ end
 def checkout(cart, coupons)
   # Consult README for inputs and outputs
   #
+  counter = 0 
+  while counter < coupons.length do 
+    cart_item = find_item_by_name_in_collection(coupons[counter][:item], cart) 
+    coupon_item_name = #{
+    counter += 1
+  end  
   # This method should call
   # * consolidate_cart
   # * apply_coupons
