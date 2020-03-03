@@ -1,6 +1,13 @@
+require 'pry' 
 def find_item_by_name_in_collection(name, collection)
   # Implement me first!
-  #
+  index = 0
+  while index < collection.length do
+    if name == collection[index][:item]
+      return collection[index]
+    end 
+    index += 1
+  end
   # Consult README for inputs and outputs
 end
 
@@ -9,6 +16,37 @@ def consolidate_cart(cart)
   #
   # REMEMBER: This returns a new Array that represents the cart. Don't merely
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
+#   new_array = []
+#   index = 0 
+#   while index < cart.length do
+#     binding.pry
+#     (cart[index][:count] = 1)
+#     if car[index][:item] != 
+#     else
+#       cart[index][:count] += 1
+#     new_array << cart[index]
+#     end 
+#   index += 1
+#   end
+# new_array
+  new_array = []
+  counter = 0 
+  while counter < cart.length do 
+    new_cart_item = find_item_by_name_in_collection(cart[counter][:item], new_array)
+    if new_cart_item != nil
+      new_cart_item[:count] += 1
+    else
+      new_cart_item = {
+        :item => cart[counter][:item],
+        :price => cart[counter][:price],
+        :clearance => cart[counter][:clearance],
+        :count => 1
+      }
+      new_array << new_cart_item
+    end
+    counter += 1
+  end
+  new_array
 end
 
 def apply_coupons(cart, coupons)
